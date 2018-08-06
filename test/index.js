@@ -1713,9 +1713,9 @@ describe('Nightmare', function() {
         .goto(fixture('rendering'))
         .wait(2000)
         .evaluate(function() {
-          return !!window.jQuery
+          return window.jQuery ? 1 : 0
         })
-      loaded.should.be.at.least(true)
+      loaded.should.be.at.least(1)
     })
 
     it('should render fonts correctly', function*() {
