@@ -216,16 +216,6 @@ const nightmare = Nightmare({
 })
 ```
 
-##### typeInterval (default: 100ms)
-
-How long to wait between keystrokes when using `.type()`.
-
-```js
-const nightmare = Nightmare({
-  typeInterval: 20
-})
-```
-
 ##### pollInterval (default: 250ms)
 
 How long to wait between checks for the `.wait()` condition to be successful.
