@@ -445,7 +445,10 @@ describe('Nightmare', function() {
         },
         function(err) {
           assert.equal(err instanceof Error, true)
-          assert.equal(err.message, 'navigation error')
+          assert(
+            /^navigation error/.test(err.message),
+            `Message '${err.message}' does not contain 'navigation error'`
+          )
           assert.equal(err.details, 'ERR_NAME_NOT_RESOLVED')
           assert.equal(err.code, -105)
           assert.equal(err.url, 'http://this-is-not-a-real-domain.tld/')
